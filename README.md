@@ -1,2 +1,1 @@
-# Squadfree
- Free buitiful website template
+EarlyAds website
