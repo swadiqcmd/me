@@ -439,7 +439,8 @@
 
 .gprev,
 .gnext,
-.gclose {
+.gclose,
+.glink {
   z-index: 99999;
   cursor: pointer;
   width: 26px;
@@ -462,7 +463,8 @@
 
 .gprev svg,
 .gnext svg,
-.gclose svg {
+.gclose svg,
+.glink svg {
   display: block;
   width: 25px;
   height: auto;
@@ -472,13 +474,15 @@
 
 .gprev.disabled,
 .gnext.disabled,
-.gclose.disabled {
+.gclose.disabled,
+ .glink.disabled{
   opacity: 0.1;
 }
 
 .gprev .garrow,
 .gnext .garrow,
-.gclose .garrow {
+.gclose .garrow,
+.glink .garrow {
   stroke: #fff;
 }
 
@@ -492,7 +496,8 @@ iframe.wait-autoplay {
 
 .glightbox-closing .gnext,
     .glightbox-closing .gprev,
-    .glightbox-closing .gclose {
+    .glightbox-closing .gclose,
+    .glightbox-closing .glink {
   opacity: 0 !important;
 }
 
@@ -536,7 +541,8 @@ iframe.wait-autoplay {
 
 .glightbox-clean .gprev path,
 .glightbox-clean .gnext path,
-.glightbox-clean .gclose path {
+.glightbox-clean .gclose path,
+.glightbox-clean .glink path {
   fill: #fff;
 }
 
@@ -549,6 +555,13 @@ iframe.wait-autoplay {
 }
 
 .glightbox-clean .gnext {
+  position: absolute;
+  top: -100%;
+  right: 30px;
+  width: 40px;
+  height: 50px;
+}
+.glightbox-clean .glink {
   position: absolute;
   top: -100%;
   right: 30px;
@@ -908,17 +921,21 @@ iframe.wait-autoplay {
   }
   .glightbox-clean .gprev,
     .glightbox-clean .gnext,
-    .glightbox-clean .gclose {
+    .glightbox-clean .gclose,
+    .glightbox-clean .glink {
     background-color: rgba(0, 0, 0, 0.32);
   }
   .glightbox-clean .gprev:hover,
 .glightbox-clean .gnext:hover,
-.glightbox-clean .gclose:hover {
+.glightbox-clean .gclose:hover, 
+.glightbox-clean .glink:hover{
     background-color: rgba(0, 0, 0, 0.7);
   }
   .glightbox-clean .gprev {
     top: 45%;
   }
+  .glightbox-clean .glink {
+    top: 45%;}
   .glightbox-clean .gnext {
     top: 45%;
   }

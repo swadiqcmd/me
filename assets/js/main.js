@@ -1,6 +1,6 @@
 /**
-* Template Name: Squadfree - v4.3.0
-* Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+* Template Name: eNno - v4.3.0
+* Template URL: https://bootstrapmade.com/enno-free-simple-bootstrap-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -68,7 +68,7 @@
     let offset = header.offsetHeight
 
     if (!header.classList.contains('header-scrolled')) {
-      offset -= 24
+      offset -= 16
     }
 
     let elementPos = select(el).offsetTop
@@ -159,14 +159,20 @@
   });
 
   /**
+   * Initiate glightbox 
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
+
+  /**
    * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
+        itemSelector: '.portfolio-item'
       });
 
       let portfolioFilters = select('#portfolio-flters li', true);
@@ -181,9 +187,7 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
+
       }, true);
     }
 
@@ -232,25 +236,44 @@
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 40
+        spaceBetween: 20
       },
 
       1200: {
         slidesPerView: 3,
+        spaceBetween: 20
       }
     }
   });
 
-  /**
-   * Animation on scroll
-   */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false
-    });
-  });
-
 })()
+
+//toggler social open
+function showfx() {
+  var x = document.getElementById("socialfx");
+  x.style.display = "flex";
+  }
+function hideplus() {
+  var y = document.getElementById("plusopen");
+  y.style.display = "none";
+  }
+function showx() {
+  var z = document.getElementById("xclose");
+  z.style.display = "flex";
+  }
+
+
+//toggler social close
+
+function closefx() {
+  var a = document.getElementById("socialfx");
+  a.style.display = "none";
+  }
+function hidex() {
+  var b = document.getElementById("xclose");
+  b.style.display = "none";
+  }
+function showplus() {
+  var c = document.getElementById("plusopen");
+  c.style.display = "flex";
+  }
